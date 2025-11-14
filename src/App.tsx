@@ -31,7 +31,7 @@ function App() {
       </header>
 
       <section className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white py-24 sm:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://i.postimg.cc/L4zQD30s/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-1739.jpg')] bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-amber-600/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-5xl sm:text-6xl font-bold mb-6">P. K. Electrical Services</h2>
