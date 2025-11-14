@@ -241,7 +241,7 @@ function App() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Zap className="w-6 h-6 text-yellow-400" />
-                <h5 className="text-xl font-bold">Paul Keller Electrical</h5>
+                <h5 className="text-xl font-bold">P. K. Electrical</h5>
               </div>
               <p className="text-gray-400">Licensed & Insured Electrician</p>
             </div>
