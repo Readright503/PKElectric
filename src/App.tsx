@@ -249,7 +249,7 @@ function App() {
             <div>
               <h5 className="text-lg font-semibold mb-4">Location</h5>
               <p className="text-gray-400">
-                Serving Arvada, CO<br />
+                Serving Denver Metro<br />
                 and surrounding areas
               </p>
             </div>
@@ -269,7 +269,7 @@ function App() {
           </div>
 
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Paul Keller Electrical Services. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} P. K. Electrical Services. All rights reserved.</p>
           </div>
         </div>
       </footer>
