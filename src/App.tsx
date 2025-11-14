@@ -1,12 +1,24 @@
-import { Phone, Mail, Zap, Home, Building2, Wrench, Star } from 'lucide-react';
-import { useState } from 'react';
+import { Phone, Mail, Zap, Home, Building2, Wrench, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useRef } from 'react';
 
 function App() {
+  const galleryRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (galleryRef.current) {
+      const scrollAmount = 400;
+      const scrollLeft = galleryRef.current.scrollLeft;
+      galleryRef.current.scrollTo({
+        left: direction === 'left' ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -106,8 +118,16 @@ function App() {
       <section id="gallery" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-4xl font-bold text-gray-900 text-center mb-16">Our Work</h3>
-          <div className="relative">
-            <div className="overflow-x-auto pb-4 scrollbar-hide">
+          <div className="relative group">
+            <button
+              onClick={() => scroll('left')}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-20 bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <div className="overflow-x-auto pb-4 scrollbar-hide" ref={galleryRef}>
               <div className="flex gap-6 min-w-min">
                 {[...Array(15)].map((_, i) => (
                   <div
@@ -124,6 +144,14 @@ function App() {
                 ))}
               </div>
             </div>
+
+            <button
+              onClick={() => scroll('right')}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-20 bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
           </div>
         </div>
       </section>
