@@ -103,6 +103,31 @@ function App() {
         </div>
       </section>
 
+      <section id="gallery" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-4xl font-bold text-gray-900 text-center mb-16">Our Work</h3>
+          <div className="relative">
+            <div className="overflow-x-auto pb-4 scrollbar-hide">
+              <div className="flex gap-6 min-w-min">
+                {[...Array(15)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="flex-shrink-0 w-80 h-60 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+                  >
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="text-6xl text-gray-400 mb-2">📷</div>
+                        <p className="text-gray-500 text-sm">Image {i + 1}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="testimonials" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-4xl font-bold text-gray-900 text-center mb-16">What Our Customers Say</h3>
