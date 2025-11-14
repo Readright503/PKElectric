@@ -34,7 +34,7 @@ function App() {
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg')] bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-amber-600/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl sm:text-6xl font-bold mb-6">Paul Keller Electrical Services</h2>
+          <h2 className="text-5xl sm:text-6xl font-bold mb-6">P. K. Electrical Services</h2>
           <p className="text-2xl sm:text-3xl mb-10 text-yellow-100">Reliable Electrical Services in Arvada</p>
           <a
             href="#contact"
