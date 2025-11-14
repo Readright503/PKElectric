@@ -121,7 +121,7 @@ function App() {
           <div className="relative group">
             <button
               onClick={() => scroll('left')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-20 bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-16 z-20 bg-yellow-500 hover:bg-yellow-600 text-white p-3 rounded-full shadow-lg transition-all"
               aria-label="Scroll left"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -147,7 +147,7 @@ function App() {
 
             <button
               onClick={() => scroll('right')}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-20 bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-16 z-20 bg-yellow-500 hover:bg-yellow-600 text-white p-3 rounded-full shadow-lg transition-all"
               aria-label="Scroll right"
             >
               <ChevronRight className="w-6 h-6" />
