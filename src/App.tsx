@@ -63,7 +63,7 @@ function App() {
             <div>
               <h3 className="text-4xl font-bold text-gray-900 mb-6">About Us</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Trusted local electrician with years of experience serving homes and businesses in Arvada and surrounding areas.
+                Trusted local electrician with 20 plus years of experience serving homes and businesses in Denver and surrounding areas.
                 Licensed, insured, and committed to quality workmanship on every project.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
