@@ -129,17 +129,27 @@ function App() {
 
             <div className="overflow-x-auto pb-4 scrollbar-hide" ref={galleryRef}>
               <div className="flex gap-6 min-w-min">
-                {[...Array(15)].map((_, i) => (
+                {[
+                  'https://i.postimg.cc/L4zQD30s/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-1739.jpg',
+                  'https://i.postimg.cc/B6XRBJSP/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-1177.jpg',
+                  'https://i.postimg.cc/ryRvdyZv/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-774.jpg',
+                  'https://i.postimg.cc/Prh2ttGT/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-1191.jpg',
+                  'https://i.postimg.cc/3xfBCmdb/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-3174.jpg',
+                  'https://i.postimg.cc/4xyvdyWC/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-2605.jpg',
+                  'https://i.postimg.cc/PrrY3NsC/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-3166.jpg',
+                  'https://i.postimg.cc/63f4zxMh/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-3173.jpg',
+                  'https://i.postimg.cc/hPfhQmRK/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-3168.jpg',
+                  'https://i.postimg.cc/C1rSwv1b/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-3180.jpg',
+                ].map((imageUrl, i) => (
                   <div
                     key={i}
-                    className="flex-shrink-0 w-80 h-60 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+                    className="flex-shrink-0 w-80 h-60 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
                   >
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-6xl text-gray-400 mb-2">📷</div>
-                        <p className="text-gray-500 text-sm">Image {i + 1}</p>
-                      </div>
-                    </div>
+                    <img
+                      src={imageUrl}
+                      alt={`Electrical work example ${i + 1}`}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 ))}
               </div>
