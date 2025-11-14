@@ -256,15 +256,18 @@ function App() {
 
             <div>
               <h5 className="text-lg font-semibold mb-4">Contact</h5>
-              <p className="text-gray-400">
-                <a href="tel:720-327-4582" className="hover:text-yellow-400 transition-colors">
-                  (720) 327-4582
-                </a>
-                <br />
-                <a href="mailto:p.kqualityelectricalservices@gmail.com" className="hover:text-yellow-400 transition-colors break-all">
-                  p.kqualityelectricalservices@gmail.com
-                </a>
-              </p>
+              <div className="space-y-3 text-gray-400">
+                <div>
+                  <a href="tel:720-327-4582" className="hover:text-yellow-400 transition-colors">
+                    (720) 327-4582
+                  </a>
+                </div>
+                <div>
+                  <a href="mailto:p.kqualityelectricalservices@gmail.com" className="hover:text-yellow-400 transition-colors block text-sm">
+                    p.kqualityelectricalservices@gmail.com
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
