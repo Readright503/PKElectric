@@ -35,7 +35,7 @@ function App() {
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-amber-600/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-5xl sm:text-6xl font-bold mb-6">P. K. Electrical Services</h2>
-          <p className="text-2xl sm:text-3xl mb-10 text-yellow-100">Reliable Electrical Services in Arvada</p>
+          <p className="text-2xl sm:text-3xl mb-10 text-yellow-100">Reliable Electrical Services in Denver Metro & surrounding areas</p>
           <a
             href="#contact"
             className="inline-block bg-yellow-500 text-slate-900 px-10 py-4 rounded-lg text-xl font-semibold hover:bg-yellow-400 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
