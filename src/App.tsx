@@ -21,7 +21,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Zap className="w-8 h-8 text-yellow-500" />
-            <h1 className="text-2xl font-bold text-gray-900">Paul Keller Electrical</h1>
+            <h1 className="text-2xl font-bold text-gray-900">P. K. Electrical</h1>
           </div>
           <a href="tel:720-327-4582" className="flex items-center gap-2 text-yellow-500 font-semibold hover:text-yellow-600">
             <Phone className="w-5 h-5" />
