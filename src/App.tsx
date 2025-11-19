@@ -46,7 +46,10 @@ function App() {
         <div className="absolute inset-0 bg-[url('https://i.postimg.cc/L4zQD30s/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-1739.jpg')] bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-amber-600/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl sm:text-6xl font-bold mb-6">P. K. Quality     Electrical Services</h2>
+          <h2 className="text-5xl sm:text-6xl font-bold mb-6">
+            <div>P. K. Quality</div>
+            <div className="mt-2">Electrical Services</div>
+          </h2>
           <p className="text-2xl sm:text-3xl mb-10 text-yellow-100">Reliable Electrical Services in the Denver Metro & surrounding areas</p>
           <a
             href="#contact"
