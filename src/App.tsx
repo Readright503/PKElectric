@@ -1,14 +1,8 @@
 import { Phone, Mail, Zap, Home, Building2, Wrench, Star, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 
 function App() {
   const galleryRef = useRef<HTMLDivElement>(null);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const scroll = (direction: 'left' | 'right') => {
     if (galleryRef.current) {
@@ -18,37 +12,6 @@ function App() {
         left: direction === 'left' ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
         behavior: 'smooth'
       });
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      if (response.ok) {
-        alert('Thank you for your message! We\'ll get back to you soon.');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        alert('There was an error sending your message. Please try calling us directly.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('There was an error sending your message. Please try calling us directly.');
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -282,7 +245,7 @@ function App() {
             </div>
 
             <div>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form action="https://formspree.io/f/mdkblalo" method="POST" className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                     Name
@@ -290,9 +253,8 @@ function App() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   />
                 </div>
@@ -304,9 +266,8 @@ function App() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   />
                 </div>
@@ -317,20 +278,18 @@ function App() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     required
                     rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-yellow-500 to-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-yellow-600 hover:to-amber-700 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-yellow-500 to-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-yellow-600 hover:to-amber-700 transition-colors shadow-lg"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  Send Message
                 </button>
               </form>
             </div>
