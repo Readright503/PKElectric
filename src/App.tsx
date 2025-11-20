@@ -8,6 +8,7 @@ function App() {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const scroll = (direction: 'left' | 'right') => {
     if (galleryRef.current) {
@@ -20,11 +21,35 @@ function App() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        alert('Thank you for your message! We\'ll get back to you soon.');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        alert('There was an error sending your message. Please try calling us directly.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('There was an error sending your message. Please try calling us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -302,9 +327,10 @@ function App() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-yellow-500 to-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-yellow-600 hover:to-amber-700 transition-colors shadow-lg"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-yellow-500 to-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-yellow-600 hover:to-amber-700 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
