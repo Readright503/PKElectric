@@ -99,9 +99,9 @@ function App() {
         </div>
       </section>
 
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-4xl font-bold text-gray-900 text-center mb-16">Our Services</h3>
+          <h3 className="text-4xl font-bold text-white text-center mb-16">Our Services</h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-8 rounded-lg border-2 border-gray-200 hover:border-yellow-500 hover:shadow-lg transition-all">
               <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-full mb-6">
