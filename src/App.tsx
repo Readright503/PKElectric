@@ -153,6 +153,7 @@ function App() {
                 {[
                   'https://i.postimg.cc/L4zQD30s/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-1739.jpg',
                   'https://i.postimg.cc/B6XRBJSP/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-1177.jpg',
+                  'https://i.ibb.co/G3VX9HPL/image.jpg',
                   'https://i.postimg.cc/ryRvdyZv/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-774.jpg',
                   'https://i.postimg.cc/Prh2ttGT/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-1191.jpg',
                   'https://i.postimg.cc/3xfBCmdb/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-3174.jpg',
@@ -161,7 +162,6 @@ function App() {
                   'https://i.postimg.cc/63f4zxMh/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-3173.jpg',
                   'https://i.postimg.cc/hPfhQmRK/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-3168.jpg',
                   'https://i.postimg.cc/C1rSwv1b/0981dd85-a034-479f-ab8c-2aac2d97a635-1-all-3180.jpg',
-                  'https://i.ibb.co/G3VX9HPL/image.jpg',
                 ].map((imageUrl, i) => (
                   <div
                     key={i}
@@ -298,6 +298,18 @@ function App() {
                       id="email"
                       name="email"
                       required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     />
                   </div>
